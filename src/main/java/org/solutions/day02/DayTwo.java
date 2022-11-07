@@ -1,4 +1,4 @@
-package day02;
+package org.solutions.day02;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;

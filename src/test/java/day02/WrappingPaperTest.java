@@ -1,6 +1,7 @@
 package day02;
 
 import org.junit.jupiter.api.Test;
+import org.solutions.day02.WrappingPaper;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

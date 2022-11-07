@@ -1,4 +1,4 @@
-package day02;
+package org.solutions.day02;
 
 import java.util.List;
 import java.util.stream.Stream;

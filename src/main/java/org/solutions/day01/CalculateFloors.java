@@ -1,4 +1,4 @@
-package day01;
+package org.solutions.day01;
 
 public class CalculateFloors {
 

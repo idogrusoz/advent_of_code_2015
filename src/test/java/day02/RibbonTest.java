@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.solutions.day02.Ribbon;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

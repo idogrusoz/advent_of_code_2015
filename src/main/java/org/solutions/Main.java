@@ -1,8 +1,8 @@
-package org.example;
+package org.solutions;
 
-import day01.DayOne;
-import day02.DayTwo;
-import day03.DayThree;
+import org.solutions.day01.DayOne;
+import org.solutions.day02.DayTwo;
+import org.solutions.day03.DayThree;
 
 public class Main {
     private static final DayOne day1 = new DayOne();
