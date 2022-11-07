@@ -2,9 +2,9 @@ package org.solutions.day02;
 
 import java.util.List;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class RibbonTest {
@@ -13,7 +13,7 @@ class RibbonTest {
     void givenDimensions_whenFindTheShortestDistance_thenReturnsTheTwoShortestDimensions() {
         var ribbon = new Ribbon("2x3x4");
         List<Integer> actual = ribbon.shortestDimensions();
-        Assertions.assertThat(actual).usingRecursiveComparison().isEqualTo(List.of(2, 3));
+        assertThat(actual).usingRecursiveComparison().isEqualTo(List.of(2, 3));
     }
 
     @Test
