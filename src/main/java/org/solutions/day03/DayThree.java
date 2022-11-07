@@ -24,13 +24,15 @@ public class DayThree {
     private static void santaDeliversAlone(String input) {
         var deliveryGrid = new DeliveryGrid();
         deliveryGrid.deliver(input);
-        System.out.println("Santa delivers at least one present to " + deliveryGrid.countOfTheHousesReceivedAGift() + " houses \n");
+        System.out.printf("Santa delivers at least one present to %s houses \n \n", deliveryGrid.countOfTheHousesReceivedAGift());
     }
 
     private void santaDeliversWithRobotSanta(String input) {
         var team = new DeliveryTeam();
         team.deliver(input);
-        System.out.println("Santa delivers at least one present to " +
-                               team.totalAmountOfHousesDelivered() + " houses if he uses robot santa \n");
+        System.out.printf(
+            "Santa delivers at least one present to %s houses if he uses robot santa \n \n",
+            team.totalAmountOfHousesDelivered()
+        );
     }
 }

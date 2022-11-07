@@ -32,11 +32,11 @@ public class DayTwo {
 
     private static void totalAmountOfWrappingPaper(List<Integer> dimensions) {
         var totalAmountOfPaperNeeded = dimensions.stream().reduce(0, Integer::sum);
-        System.out.println("Total amount of wrapping paper needed by the goblins is: " + totalAmountOfPaperNeeded + "\n");
+        System.out.printf("Total amount of wrapping paper needed by the goblins is: %s \n \n", totalAmountOfPaperNeeded);
     }
 
     private void totalAmountOfRibbon(List<Integer> lengthList) {
         var totalAmountOfRibbonNeeded = lengthList.stream().reduce(0, Integer::sum);
-        System.out.println("Total amount of ribbon needed by the goblins is: " + totalAmountOfRibbonNeeded + "\n");
+        System.out.printf("Total amount of ribbon needed by the goblins is: %s \n \n", totalAmountOfRibbonNeeded);
     }
 }
