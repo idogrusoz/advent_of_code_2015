@@ -10,15 +10,27 @@ public class DayThree {
 
     public void execute() {
         String file = "src/main/resources/day3.txt";
-        var deliveryGrid = new DeliveryGrid();
         try (var reader = new BufferedReader
             (new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8))) {
             String input = reader.readLine();
             reader.close();
-            deliveryGrid.deliver(input);
-            System.out.println("Santa delivers at least on present to " + deliveryGrid.countOfTheHousesReceivedAGift() + " houses");
+            santaDeliversAlone(input);
+            santaDeliversWithRobotSanta(input);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    private static void santaDeliversAlone(String input) {
+        var deliveryGrid = new DeliveryGrid();
+        deliveryGrid.deliver(input);
+        System.out.println("Santa delivers at least one present to " + deliveryGrid.countOfTheHousesReceivedAGift() + " houses \n");
+    }
+
+    private void santaDeliversWithRobotSanta(String input) {
+        var team = new DeliveryTeam();
+        team.deliver(input);
+        System.out.println("Santa delivers at least one present to " +
+                               team.totalAmountOfHousesDelivered() + " houses if he uses robot santa \n");
     }
 }

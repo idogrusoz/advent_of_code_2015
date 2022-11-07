@@ -5,7 +5,12 @@ import java.util.Set;
 
 public class DeliveryGrid {
     private Coordinate coordinate = new Coordinate(0, 0);
+
     private final Set<Coordinate> deliveredLocations = new HashSet<>();
+
+    public Set<Coordinate> getDeliveredLocations() {
+        return deliveredLocations;
+    }
 
     public void deliver(String directions) {
         deliverToLocation();
