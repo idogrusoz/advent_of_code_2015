@@ -15,9 +15,7 @@ public class DeliveryGrid {
     public void deliver(String directions) {
         deliverToLocation();
         for (char ch : directions.toCharArray()) {
-            var x = coordinate.x();
-            var y = coordinate.y();
-            findNewCoordinate(ch, x, y);
+            moveToNewLocation(ch);
             deliverToLocation();
         }
     }
@@ -26,14 +24,14 @@ public class DeliveryGrid {
         deliveredLocations.add(coordinate);
     }
 
-    private void findNewCoordinate(char ch, int x, int y) {
+    private void moveToNewLocation(char ch) {
         switch (ch) {
-            case '^' -> y++;
-            case 'v' -> y--;
-            case '>' -> x++;
-            case '<' -> x--;
+            case '^' -> coordinate = coordinate.up();
+            case 'v' -> coordinate = coordinate.down();
+            case '>' -> coordinate = coordinate.right();
+            case '<' -> coordinate = coordinate.left();
         }
-        coordinate = new Coordinate(x, y);
+
     }
 
     public int countOfTheHousesReceivedAGift() {
