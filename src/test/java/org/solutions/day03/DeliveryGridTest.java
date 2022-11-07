@@ -1,8 +1,7 @@
-package day03;
+package org.solutions.day03;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.solutions.day03.DeliveryGrid;
 
 class DeliveryGridTest {
 
