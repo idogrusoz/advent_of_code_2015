@@ -18,8 +18,9 @@ public class DayOne {
                 (new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8));
             String input = reader.readLine();
             reader.close();
-            System.out.println(calculateFloors.calculateFloors(input));
-            System.out.println(firstStepToBasement.findTheIndexOfTheChar(input));
+            System.out.println("Santa will be at the floor: " + calculateFloors.calculateFloors(input));
+            System.out.println("Position of the first instruction that will make santa enter the floor -1 is: "
+                                   + firstStepToBasement.findTheIndexOfTheChar(input));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
