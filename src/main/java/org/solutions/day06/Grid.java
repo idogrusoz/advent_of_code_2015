@@ -17,7 +17,19 @@ public abstract class Grid<T extends LightBulb> {
     Map<Coordinate, T> lights = new HashMap<>();
     private ActionType actionType;
 
-    protected abstract void installTheLights(Coordinate start, Coordinate end);
+    public Grid(Coordinate start, Coordinate end) {
+        this.initiateTheGrid(start, end);
+    }
+
+    private void initiateTheGrid(Coordinate start, Coordinate end) {
+        for (var i = start.x(); i <= end.x(); i++) {
+            for (var j = start.y(); j <= end.y(); j++) {
+                installLight(i, j);
+            }
+        }
+    }
+
+    protected abstract void installLight(int i, int j);
 
     public void execute(String command) {
         findActionType(command);

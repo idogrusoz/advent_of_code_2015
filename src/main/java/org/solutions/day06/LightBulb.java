@@ -2,7 +2,7 @@ package org.solutions.day06;
 
 public class LightBulb {
 
-    private int state;
+    int state;
 
     public LightBulb() {
         state = 0;
