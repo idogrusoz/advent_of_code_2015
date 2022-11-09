@@ -13,7 +13,7 @@ class SimpleGridTest {
     @Test
     void givenATurnOnCommand_whenCoordinatesExtracted_thenReturnsCorrectValues() {
         var expected = List.of(Pair.create(599, 989), Pair.create(806, 993));
-        var grid = new SimpleGrid(new Coordinate(0, 0), new Coordinate(999, 999));
+        var grid = new SimpleGrid();
         var command = "turn on 599,989 through 806,993";
         var actual = grid.getTurnOnCoordinates(command);
         assertThat(actual).usingRecursiveComparison().isEqualTo(expected);
@@ -22,7 +22,7 @@ class SimpleGridTest {
     @Test
     void givenATurnOffCommand_whenCoordinatesExtracted_thenReturnsCorrectValues() {
         var expected = List.of(Pair.create(448, 208), Pair.create(645, 684));
-        var grid = new SimpleGrid(new Coordinate(0, 0), new Coordinate(999, 999));
+        var grid = new SimpleGrid();
         var command = "turn off 448,208 through 645,684";
         var actual = grid.getTurnOffCoordinates(command);
         assertThat(actual).usingRecursiveComparison().isEqualTo(expected);
@@ -31,7 +31,7 @@ class SimpleGridTest {
     @Test
     void givenAToggleCommand_whenCoordinatesExtracted_thenReturnsCorrectValues() {
         var expected = List.of(Pair.create(50, 472), Pair.create(452, 788));
-        var grid = new SimpleGrid(new Coordinate(0, 0), new Coordinate(999, 999));
+        var grid = new SimpleGrid();
         var command = "toggle 50,472 through 452,788\n";
         var actual = grid.getToggleCoordinates(command);
         assertThat(actual).usingRecursiveComparison().isEqualTo(expected);
@@ -39,14 +39,14 @@ class SimpleGridTest {
 
     @Test
     void givenTurnOffCommand_whenFindActionType_thenCorrectActionTypeIsFound() {
-        var grid = new SimpleGrid(new Coordinate(0, 0), new Coordinate(999, 999));
+        var grid = new SimpleGrid();
         grid.findActionType("turn off 448,208 through 645,684");
         assertEquals(ActionType.TURN_OFF, grid.getActionType());
     }
 
     @Test
     void givenATurnOnCommand_whenExecuted_thenCorrectAmountOfLightsAreTurnedOn() {
-        var grid = new SimpleGrid(new Coordinate(0, 0), new Coordinate(999, 999));
+        var grid = new SimpleGrid();
         grid.execute("turn on 0,0 through 999,999");
         var lidLightsCount = grid.getTheStateOfTheLights();
         assertEquals(1000000, lidLightsCount);
@@ -54,7 +54,7 @@ class SimpleGridTest {
 
     @Test
     void givenATurnOffCommand_whenExecuted_thenCorrectAmountOfLightsAreTurnedOff() {
-        var grid = new SimpleGrid(new Coordinate(0, 0), new Coordinate(999, 999));
+        var grid = new SimpleGrid();
         grid.execute("turn on 0,0 through 999,999");
         grid.execute("turn off 0,0 through 4,4");
         var lidLightsCount = grid.getTheStateOfTheLights();
@@ -63,7 +63,7 @@ class SimpleGridTest {
 
     @Test
     void givenAToggleCommand_whenExecuted_thenCorrectAmountOfLightsAreTurnedOff() {
-        var grid = new SimpleGrid(new Coordinate(0, 0), new Coordinate(999, 999));
+        var grid = new SimpleGrid();
         grid.execute("toggle 0,0 through 4,4");
         var lidLightsCount = grid.getTheStateOfTheLights();
         assertEquals(25, lidLightsCount);

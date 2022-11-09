@@ -17,20 +17,6 @@ public abstract class Grid<T extends LightBulb> {
     Map<Coordinate, T> lights = new HashMap<>();
     private ActionType actionType;
 
-    public Grid(Coordinate start, Coordinate end) {
-        this.initiateTheGrid(start, end);
-    }
-
-    private void initiateTheGrid(Coordinate start, Coordinate end) {
-        for (var i = start.x(); i <= end.x(); i++) {
-            for (var j = start.y(); j <= end.y(); j++) {
-                installLight(i, j);
-            }
-        }
-    }
-
-    protected abstract void installLight(int i, int j);
-
     public void execute(String command) {
         findActionType(command);
         List<Pair<Integer, Integer>> coordinates = switch (actionType) {
@@ -84,14 +70,19 @@ public abstract class Grid<T extends LightBulb> {
     }
 
     protected void turnTheLightOn(Coordinate coordinate) {
+        putIfAbsent(coordinate);
         lights.get(coordinate).turnOn();
     }
 
+    protected abstract void putIfAbsent(Coordinate coordinate);
+
     protected void turnTheLightOff(Coordinate coordinate) {
+        putIfAbsent(coordinate);
         lights.get(coordinate).turnOff();
     }
 
     protected void toggleTheLight(Coordinate coordinate) {
+        putIfAbsent(coordinate);
         lights.get(coordinate).toggle();
     }
 

@@ -9,8 +9,8 @@ import java.nio.charset.StandardCharsets;
 public class DaySix {
     public void execute() {
         String file = "src/main/resources/day6.txt";
-        var grid = new SimpleGrid(new Coordinate(0, 0), new Coordinate(999, 999));
-        var dimmableGrid = new DimmableGrid(new Coordinate(0, 0), new Coordinate(999, 999));
+        var grid = new SimpleGrid();
+        var dimmableGrid = new DimmableGrid();
         try (var reader = new BufferedReader
             (new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8))) {
             String line;
