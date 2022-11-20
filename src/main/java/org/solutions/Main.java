@@ -6,6 +6,7 @@ import org.solutions.day03.DayThree;
 import org.solutions.day04.DayFour;
 import org.solutions.day05.DayFive;
 import org.solutions.day06.DaySix;
+import org.solutions.day07.DaySeven;
 
 public class Main {
     private static final DayOne day1 = new DayOne();
@@ -14,6 +15,7 @@ public class Main {
     private static final DayFour day4 = new DayFour();
     private static final DayFive day5 = new DayFive();
     private static final DaySix day6 = new DaySix();
+    private static final DaySeven day7 = new DaySeven();
 
     public static void main(String[] args) {
         day1.execute();
@@ -22,5 +24,6 @@ public class Main {
         day4.execute();
         day5.execute();
         day6.execute();
+        day7.execute();
     }
 }
